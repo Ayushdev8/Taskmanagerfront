@@ -2,7 +2,7 @@ import axios from "axios"
 import { jwtDecode } from "jwt-decode"
 
 const api = axios.create({
-    baseURL : "https://taskmanager-eyhq.onrender.com"
+    baseURL : "https://taskmanagerapp-2jm7.onrender.com"
 })
 
 api.interceptors.request.use(

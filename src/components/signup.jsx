@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 const Register = () => {
   const navigate = useNavigate()
   const [passworderr,setPassworderr] =useState("")
-  const [error,setError] = useState("")
+  const [registererror,setResgisterError] = useState("")
   const [form, setForm] = useState({
     first_name: "",
     last_name: "",
@@ -33,7 +33,7 @@ const Register = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      setError("")
+      
 
       const res= await api.post("/api/register/",{
         first_name:form.first_name,
@@ -59,7 +59,7 @@ const Register = () => {
     } catch (err) {
       const message = err.response?.data?.message || "registration failed"
       console.log(err);
-      setError(err.response?.data?.detail)
+      setResgisterError(err.response?.data?.detail)
       setLoading(false)
     } 
   };
@@ -106,7 +106,7 @@ const Register = () => {
 
       {/* RIGHT SIDE */}
       <div className="flex w-full md:w-1/2 items-center justify-center px-6 py-10">
-        {error && <ErrorCom error={error}/>}
+        {registererror && <ErrorCom registererror={registererror}/>}
         
         <form
           onSubmit={handleSubmit}

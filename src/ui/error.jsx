@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ErrorCom({error,passworderr,fetcherror,deleteerror,statuserror}) {
+function ErrorCom({error,passworderr,fetcherror,deleteerror,statuserror,registererror}) {
   const [show, setShow] = useState(true);
 
   if (!show) return null;
@@ -12,6 +12,7 @@ function ErrorCom({error,passworderr,fetcherror,deleteerror,statuserror}) {
       <span>{fetcherror}</span>
       <span>{deleteerror}</span>
       <span>{statuserror}</span>
+      <span>{registererror}</span>
       
       
       <button

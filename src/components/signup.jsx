@@ -112,7 +112,9 @@ const Register = () => {
           onSubmit={handleSubmit}
           className="w-full max-w-lg space-y-4"
         >
-          {passworderr && <ErrorCom passworderr={passworderr}/>}
+          {passworderr && <>
+                <h1 className="text-red-600 text-semibold bg-red-400">{passworderr}</h1>
+          </>}
           <div className="text-center mb-6">
           <h2 className="text-3xl font-extrabold text-gray-800">
             Create Account

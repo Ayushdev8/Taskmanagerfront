@@ -24,13 +24,14 @@ const Register = () => {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-   if (form.password !== form.password2) {
-      setPassworderr("Password do not match")
-      return;
-    }
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (form.password !== form.password2) {
+      setPassworderr("Password do not match")
+      return;
+    }
     try {
       setLoading(true);
       
